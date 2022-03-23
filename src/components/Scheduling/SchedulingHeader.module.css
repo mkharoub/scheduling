@@ -1,0 +1,14 @@
+.scheduling-header {
+  padding: 10px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+}
+
+.scheduling-header__name {
+}
+
+.scheduling-header__name span {
+  font-weight: 300;
+}

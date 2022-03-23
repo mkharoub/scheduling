@@ -1,0 +1,38 @@
+.scheduling-content {
+  display: flex;
+  align-items: flex-start;
+  height: 400px;
+  position: relative;
+}
+
+.scheduling-content__messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding: 40px 17px;
+  justify-content: flex-start;
+  row-gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.scheduling-content__message {
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline;
+}
+
+.scheduling-content__message.me {
+  background: #ccc;
+  align-self: flex-end;
+}
+
+.scheduling-content__message.others {
+  background: #f1f1f1;
+}
+
+.scheduling-content__no-messages {
+  width: 100%;
+  text-align: center;
+}

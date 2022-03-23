@@ -1,0 +1,9 @@
+.label-info {
+  display: flex;
+  align-items: center;
+}
+
+.label-info__label {
+  font-weight: 500;
+  margin-right: 3px;
+}
