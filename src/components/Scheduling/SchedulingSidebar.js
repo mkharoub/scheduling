@@ -21,6 +21,7 @@ const SchedulingSidebar = () => {
       <button
         className={styles["scheduling-sidebar__toggle"]}
         onClick={toggleSideBar}
+        aria-label="Arrow Icon"
       >
         <Arrow />
       </button>

@@ -4,16 +4,16 @@
   height: 100%;
   width: 0;
   background: #fefefe;
+  transition: width 0.2s ease;
 }
 
 .scheduling-sidebar__content {
   overflow: hidden;
   opacity: 0;
-  transition: width 0.15s ease;
 }
 
 .scheduling-sidebar.is-open {
-  width: 30%;
+  width: 280px;
   border-left: 1px solid #efefef;
 }
 
@@ -71,7 +71,7 @@
     border-left: 0;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     margin-left: 0;
   }
 }
