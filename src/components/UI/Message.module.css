@@ -1,0 +1,22 @@
+.message {
+  width: 100%;
+  display: flex;
+}
+
+.message p {
+  padding: 6px 12px;
+  border-radius: 15px;
+  display: inline;
+}
+
+.message.me {
+  justify-content: flex-end;
+}
+
+.message.me p {
+  background: #ccc;
+}
+
+.message.bot p {
+  background: #f1f1f1;
+}

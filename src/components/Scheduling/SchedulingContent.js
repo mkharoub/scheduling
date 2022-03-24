@@ -1,32 +1,30 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import SchedulingContext from "../../store/scheduling-context";
+import Message from "../UI/Message";
 import styles from "./SchedulingContent.module.css";
 import SchedulingSidebar from "./SchedulingSidebar";
 
 const SchedulingContent = () => {
+  const messagesContainerRef = useRef();
   const schedulingCtx = useContext(SchedulingContext);
 
-  let messages;
-  if (!schedulingCtx.messages.length) {
-    messages = (
-      <p className={styles["scheduling-content__no-messages"]}>No Messages!</p>
-    );
-  } else {
-    messages = schedulingCtx.messages.map((message) => {
-      return (
-        <p
-          key={message.id}
-          className={`${styles["scheduling-content__message"]} ${styles["me"]}`}
-        >
-          {message.value}
-        </p>
-      );
-    });
-  }
+  useEffect(() => {
+    const elm = messagesContainerRef.current;
+    elm.scrollTop = elm.scrollHeight;
+  }, [schedulingCtx.messages]);
+
+  const messages = schedulingCtx.messages.map((message) => {
+    return <Message key={message.id} message={message} />;
+  });
 
   return (
     <section className={styles["scheduling-content"]}>
-      <div className={styles["scheduling-content__messages"]}>{messages}</div>
+      <div
+        className={styles["scheduling-content__messages"]}
+        ref={messagesContainerRef}
+      >
+        {messages}
+      </div>
       <SchedulingSidebar />
     </section>
   );

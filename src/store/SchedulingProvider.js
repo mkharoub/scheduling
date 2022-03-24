@@ -11,6 +11,10 @@ const schedulingReducer = (state, action) => {
       messages: state.messages.concat(action.message),
     };
   }
+
+  if (action.type === "CLEAR") {
+    return defaultSchedulingState;
+  }
 };
 
 const SchedulingProvider = (props) => {
@@ -23,9 +27,14 @@ const SchedulingProvider = (props) => {
     dispatchSchedulingAction({ type: "ADD", message });
   };
 
+  const clearMessagesHandler = () => {
+    dispatchSchedulingAction({ type: "CLEAR" });
+  };
+
   const schedulingContext = {
     messages: schedulingState.messages,
     addMessage: addMessageHandler,
+    clearMessages: clearMessagesHandler,
   };
 
   return (
