@@ -1,34 +1,27 @@
 .scheduling-sidebar {
   position: relative;
   height: 100%;
-  width: 0;
+  width: 58px;
   background: #fefefe;
+  border-left: 1px solid #efefef;
   transition: width 0.2s ease;
+  padding: 60px 17px;
 }
 
 .scheduling-sidebar__content {
-  overflow: hidden;
-  opacity: 0;
+  display: none;
 }
 
 .scheduling-sidebar.is-open {
   width: 280px;
-  border-left: 1px solid #efefef;
 }
 
 .scheduling-sidebar.is-open .scheduling-sidebar__content {
-  opacity: 1;
-  padding: 60px 17px;
+  display: block;
 }
 
 .scheduling-sidebar__info {
   margin-bottom: 40px;
-  visibility: hidden;
-  transition: visibility 0s linear 0.1s;
-}
-
-.scheduling-sidebar.is-open .scheduling-sidebar__info {
-  visibility: visible;
 }
 
 .scheduling-sidebar__avatar {
@@ -44,7 +37,8 @@
   border-radius: 100%;
   position: absolute;
   top: 25px;
-  left: -12px;
+  left: auto;
+  right: 17px;
   transform: rotate(180deg);
 }
 
@@ -54,6 +48,11 @@
 
 .scheduling-sidebar__toggle:hover svg {
   color: #fff;
+}
+
+.scheduling-sidebar.is-open .scheduling-sidebar__toggle {
+  right: auto;
+  left: 17px;
 }
 
 .scheduling-sidebar.is-open .scheduling-sidebar__toggle svg {
