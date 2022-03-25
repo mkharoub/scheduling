@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./LabelInfo.module.css";
 
 const LabelInfo = (props) => {
@@ -9,4 +10,4 @@ const LabelInfo = (props) => {
   );
 };
 
-export default LabelInfo;
+export default memo(LabelInfo);

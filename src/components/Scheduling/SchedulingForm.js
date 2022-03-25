@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import SchedulingContext from "../../store/scheduling-context";
+import Input from "../UI/Input";
 import styles from "./SchedulingForm.module.css";
 
 const SchedulingForm = () => {
@@ -53,10 +54,9 @@ const SchedulingForm = () => {
   return (
     <section className={styles["scheduling-form"]}>
       <form onSubmit={submitHandler}>
-        <input
+        <Input
           type="text"
           placeholder="Type Something!"
-          className={styles["scheduling-form__input"]}
           value={message}
           onChange={changeHandler}
         />

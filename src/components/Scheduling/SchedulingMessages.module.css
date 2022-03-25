@@ -1,0 +1,8 @@
+.scheduling-messages {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 40px 17px;
+  row-gap: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}

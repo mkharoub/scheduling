@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import useIntersectionObserver from "../../hooks/use-intersection-observer";
+import styles from "./Image.module.css";
 
 const Image = (props) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,10 +17,10 @@ const Image = (props) => {
   });
 
   return (
-    <div className="image" ref={imgRef}>
+    <div className={styles.image} ref={imgRef}>
       {isVisible && <img {...props} />}
     </div>
   );
 };
 
-export default Image;
+export default memo(Image);

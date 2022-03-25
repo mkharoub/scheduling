@@ -1,17 +1,16 @@
-import Arrow from "../../assets/Arrow";
 import styles from "./SchedulingSidebar.module.css";
 import LabelInfo from "../UI/LabelInfo";
-import Circle from "../UI/Circle";
 import personalImg from "../../assets/personal-user.jpg";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "../UI/Image";
+import Button from "../UI/Button";
 
 const SchedulingSidebar = () => {
   const [isOpened, setIsOpened] = useState(true);
 
-  const toggleSideBar = () => {
+  const toggleSideBar = useCallback(() => {
     setIsOpened((prev) => !prev);
-  };
+  }, []);
 
   return (
     <div
@@ -19,26 +18,16 @@ const SchedulingSidebar = () => {
         isOpened && styles["is-open"]
       }`}
     >
-      <button
-        className={styles["scheduling-sidebar__toggle"]}
-        onClick={toggleSideBar}
-        aria-label="Arrow Icon"
-      >
-        <Arrow />
-      </button>
+      <div className={styles["scheduling-sidebar__toggle"]}>
+        <Button onClick={toggleSideBar} label="Arrow Icon" />
+      </div>
       <div className={styles["scheduling-sidebar__content"]}>
         <div className={styles["scheduling-sidebar__info"]}>
           <LabelInfo label="Name">Kharoub</LabelInfo>
           <LabelInfo label="Age">29</LabelInfo>
         </div>
-        <div className={styles["scheduling-sidebar__avatar"]}>
-          <Circle size="large">
-            <Image
-              src={personalImg}
-              alt="Personal User Image"
-              className="img-responsive"
-            />
-          </Circle>
+        <div className={`${styles["scheduling-sidebar__avatar"]} circle large`}>
+          <Image src={personalImg} alt="Personal User Image" />
         </div>
       </div>
     </div>
