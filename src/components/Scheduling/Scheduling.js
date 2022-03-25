@@ -1,6 +1,7 @@
 import SchedulingProvider from "../../store/SchedulingProvider";
 import styles from "./Scheduling.module.css";
 import SchedulingMessages from "./SchedulingMessages";
+import SchedulingFormV2 from "./SchedulingFormV2";
 import SchedulingForm from "./SchedulingForm";
 import SchedulingHeader from "./SchedulingHeader";
 import SchedulingSidebar from "./SchedulingSidebar";
@@ -14,6 +15,7 @@ const Scheduling = () => {
           <section className={styles["scheduling__messages-form"]}>
             <SchedulingProvider>
               <SchedulingMessages />
+              {/* <SchedulingFormV2 /> */}
               <SchedulingForm />
             </SchedulingProvider>
           </section>

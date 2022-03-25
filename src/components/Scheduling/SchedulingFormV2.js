@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import SchedulingContext from "../../store/scheduling-context";
 import Input from "../UI/Input";
 import styles from "./SchedulingForm.module.css";
 
-const SchedulingForm = () => {
-  const [message, setMessage] = useState("");
+const SchedulingFormV2 = () => {
+  const ref = useRef();
   const schedulingCtx = useContext(SchedulingContext);
 
   useEffect(() => {
@@ -26,21 +26,17 @@ const SchedulingForm = () => {
     };
   }, [schedulingCtx.messages]);
 
-  const changeHandler = (e) => {
-    setMessage(e.target.value);
-  };
-
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const preparedMessage = message.trim();
+    const preparedMessage = ref.current.value().trim();
 
     if (!preparedMessage) {
       return;
     }
 
     addMessage(preparedMessage);
-    setMessage("");
+    ref.current.clear();
   };
 
   const addMessage = (message, sender) => {
@@ -55,11 +51,10 @@ const SchedulingForm = () => {
     <section className={styles["scheduling-form"]}>
       <form onSubmit={submitHandler}>
         <Input
+          ref={ref}
           attrs={{
             type: "text",
             placeholder: "Type Something!",
-            value: message,
-            onChange: changeHandler,
           }}
         />
       </form>
@@ -67,4 +62,4 @@ const SchedulingForm = () => {
   );
 };
 
-export default SchedulingForm;
+export default SchedulingFormV2;
