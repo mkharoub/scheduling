@@ -2,8 +2,9 @@ import Arrow from "../../assets/Arrow";
 import styles from "./SchedulingSidebar.module.css";
 import LabelInfo from "../UI/LabelInfo";
 import Circle from "../UI/Circle";
-import userImg from "../../assets/user-img.png";
+import personalImg from "../../assets/personal-user.jpg";
 import { useState } from "react";
+import Image from "../UI/Image";
 
 const SchedulingSidebar = () => {
   const [isOpened, setIsOpened] = useState(true);
@@ -32,7 +33,11 @@ const SchedulingSidebar = () => {
         </div>
         <div className={styles["scheduling-sidebar__avatar"]}>
           <Circle size="large">
-            <img src={userImg} alt="User Image" className="img-responsive" />
+            <Image
+              src={personalImg}
+              alt="Personal User Image"
+              className="img-responsive"
+            />
           </Circle>
         </div>
       </div>

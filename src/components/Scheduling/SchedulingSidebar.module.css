@@ -24,6 +24,12 @@
 
 .scheduling-sidebar__info {
   margin-bottom: 40px;
+  visibility: hidden;
+  transition: visibility 0s linear 0.1s;
+}
+
+.scheduling-sidebar.is-open .scheduling-sidebar__info {
+  visibility: visible;
 }
 
 .scheduling-sidebar__avatar {

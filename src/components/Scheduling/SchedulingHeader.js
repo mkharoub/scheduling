@@ -1,6 +1,7 @@
 import Circle from "../UI/Circle";
 import styles from "./SchedulingHeader.module.css";
 import userImg from "../../assets/user-img.png";
+import Image from "../UI/Image";
 
 const SchedulingHeader = () => {
   return (
@@ -9,7 +10,7 @@ const SchedulingHeader = () => {
         <span>Hi</span> Guest!
       </h2>
       <Circle>
-        <img src={userImg} alt="User Image" className="img-responsive" />
+        <Image src={userImg} alt="User Image" className="img-responsive" />
       </Circle>
     </section>
   );
